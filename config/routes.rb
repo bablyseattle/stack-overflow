@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
+
+  resources :questions do
+    resources :answers
+  end
 end

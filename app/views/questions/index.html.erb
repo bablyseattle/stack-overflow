@@ -1,0 +1,28 @@
+<h1>All Questions</h1>
+
+
+
+<div class="container">
+      <br/>
+    <table>
+      <tr>
+        <th>Question</th>
+        <th>Asked by</th>
+      </tr>
+
+	<% @questions.each do |question| %>
+
+      <tr>
+        <td> <%= link_to question.query, question_path(question) %></td>
+        <td><%= question.user.username %></td>
+      </tr>
+
+  <% end %>
+   </table>
+
+   <br> <br> <br>
+
+   <%= link_to "New Question", new_question_path %>
+
+
+ </div>
